@@ -22,7 +22,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     /**
      * Constructor Menu_Principal
      */
-    public Menu_Principal() {
+    protected Menu_Principal() {
         initComponents();
         
         choice1.add("Usuarios");
@@ -160,7 +160,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         selectedChoice = choice1.getSelectedItem();
            
         
-        if ((selectedChoice.equals("Usuarios")) || (selectedChoice.equals("Centros")) || (selectedChoice.equals("Trabajos"))) {
+        if (selectedChoice.equals("Usuarios") || selectedChoice.equals("Centros") || selectedChoice.equals("Trabajos")) {
             choice2.removeAll();
             
             choice2.add("Alta");
@@ -194,7 +194,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         int acceso;
         
         // Variable para comprobar si los trabajos se han asignado correctamente
-        boolean resultadoAsignarTrabajos;
+        //boolean resultadoAsignarTrabajos;
         
         c1 = choice1.getSelectedItem();
         c2 = choice2.getSelectedItem();
@@ -392,7 +392,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    protected static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -433,7 +433,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    public static javax.swing.JTextField jTextField1;
+    protected static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     
 }
