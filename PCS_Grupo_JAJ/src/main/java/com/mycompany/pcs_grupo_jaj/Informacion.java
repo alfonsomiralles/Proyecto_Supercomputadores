@@ -32,7 +32,7 @@ public class Informacion extends javax.swing.JFrame {
         String cnombre;
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs =stmt.executeQuery("SELECT * FROM centros_computacion");
             while (rs.next()){
@@ -52,7 +52,7 @@ public class Informacion extends javax.swing.JFrame {
         String tnombre = null;
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs =stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_estado='Sin Asignar'");
             while (rs.next()){
@@ -72,7 +72,7 @@ public class Informacion extends javax.swing.JFrame {
         int tseg;
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs =stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_estado='En proceso'");
             while (rs.next()){
@@ -94,7 +94,7 @@ public class Informacion extends javax.swing.JFrame {
         String tcentro = null;
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs =stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_estado='Finalizado'");
             while (rs.next()){

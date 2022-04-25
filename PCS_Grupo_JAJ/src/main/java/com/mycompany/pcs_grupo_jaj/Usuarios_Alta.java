@@ -168,10 +168,10 @@ public class Usuarios_Alta extends javax.swing.JFrame {
      * @param contrasena Contraseña del Usuario
      * @param tipoUsuario Tipo de Usuario
      */
-    private void altaUsuario(String usuario, char[] contrasena, String tipoUsuario){
+    public void altaUsuario(String usuario, char[] contrasena, String tipoUsuario){
         try //Insertar datos en BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             stmt.executeUpdate("INSERT INTO usuarios_db(u_usuario,u_contraseña,u_tipo_usuario)" + "VALUES('"+usuario+"','"+Arrays.toString(contrasena)+"','"+tipoUsuario+"')"); 
             JOptionPane.showMessageDialog(this, "Usuario Creado con Éxito", "Información", 1);

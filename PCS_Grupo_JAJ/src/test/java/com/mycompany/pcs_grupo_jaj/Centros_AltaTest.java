@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Alfonso
  */
-public class Trabajos_AltaTest {
+public class Centros_AltaTest {
     
-    public Trabajos_AltaTest() {
+    public Centros_AltaTest() {
     }
     
     @BeforeClass
@@ -38,29 +38,29 @@ public class Trabajos_AltaTest {
     }
 
     /**
-     * Test of main method, of class Trabajos_Alta.
+     * Test of crearNuevoCentro method, of class Centros_Alta.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Trabajos_Alta.main(args);
+    public void testCrearNuevoCentro() {
+        System.out.println("crearNuevoCentro");
+        String nombreCentro = "";
+        int capacidadProceso = 0;
+        int tamanoColaTrabajos = 0;
+        String usuarioAdministrador = "";
+        Centros_Alta instance = new Centros_Alta();
+        instance.crearNuevoCentro(nombreCentro, capacidadProceso, tamanoColaTrabajos, usuarioAdministrador);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of altaTrabajo method, of class Trabajos_Alta.
+     * Test of main method, of class Centros_Alta.
      */
     @Test
-    public void testAltaTrabajo() {
-        System.out.println("altaTrabajo");
-        String nombreTrabajo = "";
-        int cantidadOperaciones = 0;
-        String usuarioPropietario = "";
-        String usuario = "";
-        Trabajos_Alta instance = new Trabajos_Alta();
-        instance.altaTrabajo(nombreTrabajo, cantidadOperaciones, usuarioPropietario, usuario);
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        Centros_Alta.main(args);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

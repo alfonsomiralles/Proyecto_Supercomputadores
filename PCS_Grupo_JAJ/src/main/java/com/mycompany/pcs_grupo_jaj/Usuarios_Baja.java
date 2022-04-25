@@ -120,10 +120,10 @@ public class Usuarios_Baja extends javax.swing.JFrame {
      * Metodo para dar de baja un usuario
      * @param usuario identificador de usuario
      */
-    private void bajaUsuario(String usuario){
+    public void bajaUsuario(String usuario){
         try //comprobar las credenciales de usuario
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             stmt.executeUpdate("DELETE from usuarios_db where u_usuario='" +usuario+ "'");  
             JOptionPane.showMessageDialog(this, "El usuario se ha sido eliminado", "Información", 1);

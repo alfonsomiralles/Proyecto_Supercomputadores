@@ -1,4 +1,10 @@
-com\mycompany\pcs_grupo_jaj\Trabajos_AltaTest.class
 com\mycompany\pcs_grupo_jaj\LoginTest.class
-com\mycompany\pcs_grupo_jaj\BienvenidaTest.class
 com\mycompany\pcs_grupo_jaj\Menu_PrincipalTest.class
+com\mycompany\pcs_grupo_jaj\InformacionTest.class
+com\mycompany\pcs_grupo_jaj\Usuarios_BajaTest.class
+com\mycompany\pcs_grupo_jaj\Usuarios_ModificacionTest.class
+com\mycompany\pcs_grupo_jaj\Trabajos_AltaTest.class
+com\mycompany\pcs_grupo_jaj\Centros_AltaTest.class
+com\mycompany\pcs_grupo_jaj\Usuarios_AltaTest.class
+com\mycompany\pcs_grupo_jaj\SimulacionTest.class
+com\mycompany\pcs_grupo_jaj\BienvenidaTest.class

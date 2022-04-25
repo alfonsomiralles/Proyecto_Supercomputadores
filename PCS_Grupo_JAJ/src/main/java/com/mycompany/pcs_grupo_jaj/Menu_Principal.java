@@ -319,7 +319,7 @@ public class Menu_Principal extends javax.swing.JFrame {
  
         try //comprobar las credenciales de usuario
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs = stmt.executeQuery("SELECT u_tipo_usuario FROM usuarios_db where u_usuario='"+usuario+"'");
             while (rs.next()){
@@ -353,7 +353,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     public void asignarTrabajos(){
         try 
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs = stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_estado='Sin Asignar' ORDER BY t_orden ASC LIMIT 1");
             if (rs.next()){

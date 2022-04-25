@@ -149,7 +149,7 @@ public class Centros_Baja extends javax.swing.JFrame {
     private void eliminarCentro(String nombreCentro, String usuario){
         try //eliminar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             stmt.executeUpdate("DELETE from centros_computacion where c_nombre_centro='" +nombreCentro+ "'");  
             JOptionPane.showMessageDialog(this, "Centro Eliminado con Éxito", "Información", 1);

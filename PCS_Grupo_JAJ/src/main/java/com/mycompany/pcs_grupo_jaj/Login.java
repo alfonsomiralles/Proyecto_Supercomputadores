@@ -129,7 +129,7 @@ public class Login extends javax.swing.JFrame {
     public void autenticar(String usuario, char[] contrasena){
         try //comprobar las credenciales de usuario
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             ResultSet rs = stmt.executeQuery("select * from usuarios_db where u_usuario='"+usuario+"' and u_contraseña='"+Arrays.toString(contrasena)+"'");  
             if (rs.next()){

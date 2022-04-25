@@ -206,11 +206,11 @@ public class Centros_Alta extends javax.swing.JFrame {
      * @param tamanoColaTrabajos Tamaño de la Cola de Trabajos
      * @param usuarioAdministrador  Identificador del Usuario Administrador del Centro
      */
-    private void crearNuevoCentro(String nombreCentro, int capacidadProceso, int tamanoColaTrabajos, String usuarioAdministrador){
+    public void crearNuevoCentro(String nombreCentro, int capacidadProceso, int tamanoColaTrabajos, String usuarioAdministrador){
         
         try //Insertar datos en BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement(); 
             ResultSet rs =stmt.executeQuery("SELECT * FROM usuarios_db WHERE u_usuario='"+usuarioAdministrador+"' AND u_tipo_usuario='Administrador Centro'");
             if (rs.next()){

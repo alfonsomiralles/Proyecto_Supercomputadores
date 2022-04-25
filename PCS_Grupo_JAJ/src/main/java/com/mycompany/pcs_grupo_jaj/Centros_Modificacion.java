@@ -210,7 +210,7 @@ public class Centros_Modificacion extends javax.swing.JFrame {
     private void modificacionDatosCentro(String nombreCentro, int capacidadProceso, int tamanoColaTrabajos, String usuario){
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();  
             ResultSet re = stmt.executeQuery("SELECT * FROM centros_computacion WHERE c_nombre_centro='"+nombreCentro+"'");
             if (re.next()){

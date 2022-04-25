@@ -168,10 +168,10 @@ public class Usuarios_Modificacion extends javax.swing.JFrame {
      * @param contrasena Nueva contraseña
      * @param tipoUsuario Tipo de Usuario
      */
-    private void modificarUsuario(String usuario, char[] contrasena, String tipoUsuario){
+    public void modificarUsuario(String usuario, char[] contrasena, String tipoUsuario){
         try //modificar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
             Statement stmt=conn.createStatement();         
             stmt.executeUpdate("UPDATE usuarios_db SET u_contraseña='" +Arrays.toString(contrasena)+ "', u_tipo_usuario='" +tipoUsuario+ "' WHERE u_usuario='" +usuario+ "'");  
             JOptionPane.showMessageDialog(this, "El usuario se ha sido modificado con éxito", "Información", 1);

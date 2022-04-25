@@ -149,7 +149,7 @@ public class Trabajos_Baja extends javax.swing.JFrame {
     private void eliminarTrabajo(String nombreTrabajo, String usuario){
         try //eliminar el trabajo de la BBDD
         {
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
             Statement stmt = conn.createStatement();
             ResultSet rx = stmt.executeQuery("SELECT * FROM usuarios_db WHERE u_usuario='" + usuario + "'AND u_tipo_usuario='Administrador'"); 
             if (rx.next()) {

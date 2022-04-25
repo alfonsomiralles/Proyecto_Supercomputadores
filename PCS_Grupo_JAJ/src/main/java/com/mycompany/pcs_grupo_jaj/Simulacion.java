@@ -122,14 +122,14 @@ public class Simulacion extends javax.swing.JFrame {
      * Metodo que realiza la simulación
      * @param segundos segundos a simular
      */
-    private void simular(int segundos){
+    public void simular(int segundos){
         try //modificar el trabajo de la BBDD
         {
             int resultado;
             int cant_op;
             int cap_op;
             double segrest;
-            conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
             Statement stmt = conn.createStatement();
             ResultSet re = stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_estado='En proceso' ORDER BY t_orden ASC LIMIT 1");
             if (re.next()) {
