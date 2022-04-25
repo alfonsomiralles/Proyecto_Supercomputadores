@@ -126,7 +126,7 @@ public class Login extends javax.swing.JFrame {
      * @param usuario Identificador de Usuario
      * @param contrasena Contraseña de Usuario
      */
-    private void autenticar(String usuario, char[] contrasena){
+    public void autenticar(String usuario, char[] contrasena){
         try //comprobar las credenciales de usuario
         {
             conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  

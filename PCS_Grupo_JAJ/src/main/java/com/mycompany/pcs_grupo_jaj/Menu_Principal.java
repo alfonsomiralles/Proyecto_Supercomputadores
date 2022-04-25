@@ -312,7 +312,7 @@ public class Menu_Principal extends javax.swing.JFrame {
      * @param usuario Nombre de Usuario
      * @return Valor booleano que será "true" en caso de que el usuario tenga privilegios y "false" en caso negativo.
      */
-    private int comprobarPrivilegios(String funcionalidad, String accion, String usuario){
+    public int comprobarPrivilegios(String funcionalidad, String accion, String usuario){
         
         usuario = jTextField1.getText();
         int rt = 0;
@@ -350,7 +350,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     /**
      * Metodo para asignar trabajos
      */
-    private void asignarTrabajos(){
+    public void asignarTrabajos(){
         try 
         {
             conn = DriverManager.getConnection("jdbc:mysql://centros.ckcropo2r2me.us-east-1.rds.amazonaws.com:3306/centrosdb","admin","cencentros1");  
