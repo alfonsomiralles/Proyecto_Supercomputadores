@@ -5,6 +5,10 @@
  */
 package com.mycompany.pcs_grupo_jaj;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,22 +21,24 @@ import static org.junit.Assert.*;
  * @author Alfonso
  */
 public class Centros_AltaTest {
-    
+
+    Connection conn = null;
+
     public Centros_AltaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,13 +48,29 @@ public class Centros_AltaTest {
      */
     @Test
     public void testCrearNuevoCentro() {
-        System.out.println("crearNuevoCentro");
-        String nombreCentro = "";
-        int capacidadProceso = 0;
-        int tamanoColaTrabajos = 0;
-        String usuarioAdministrador = "";
-        Centros_Alta instance = new Centros_Alta();
-        instance.crearNuevoCentro(nombreCentro, capacidadProceso, tamanoColaTrabajos, usuarioAdministrador);
+        String result;
+        try //modificar el trabajo de la BBDD
+        {
+            System.out.println("crearNuevoCentro");
+            String nombreCentro = "CentroTest";
+            int capacidadProceso = 20000;
+            int tamanoColaTrabajos = 4;
+            String usuarioAdministrador = "adminc";
+            Centros_Alta instance = new Centros_Alta();
+            instance.crearNuevoCentro(nombreCentro, capacidadProceso, tamanoColaTrabajos, usuarioAdministrador);
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM centros_computacion WHERE c_nombre_centro=='"+nombreCentro+"'");
+            if (rs.next()) {
+                result = rs.getString(1);
+                String expResult = "CentroTest";
+                assertEquals(expResult, result);
+            }         
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -64,5 +86,5 @@ public class Centros_AltaTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

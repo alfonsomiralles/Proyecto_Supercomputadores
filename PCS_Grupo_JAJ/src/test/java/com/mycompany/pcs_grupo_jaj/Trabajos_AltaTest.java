@@ -5,6 +5,10 @@
  */
 package com.mycompany.pcs_grupo_jaj;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,22 +21,24 @@ import static org.junit.Assert.*;
  * @author Alfonso
  */
 public class Trabajos_AltaTest {
-    
+
+    Connection conn = null;
+
     public Trabajos_AltaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -54,15 +60,30 @@ public class Trabajos_AltaTest {
      */
     @Test
     public void testAltaTrabajo() {
-        System.out.println("altaTrabajo");
-        String nombreTrabajo = "";
-        int cantidadOperaciones = 0;
-        String usuarioPropietario = "";
-        String usuario = "";
-        Trabajos_Alta instance = new Trabajos_Alta();
-        instance.altaTrabajo(nombreTrabajo, cantidadOperaciones, usuarioPropietario, usuario);
+        String result;
+        try //modificar el trabajo de la BBDD
+        {
+            System.out.println("altaTrabajo");
+            String nombreTrabajo = "TrabajoTest";
+            int cantidadOperaciones = 100;
+            String usuarioPropietario = "admina";
+            String usuario = "admina";
+            Trabajos_Alta instance = new Trabajos_Alta();
+            instance.altaTrabajo(nombreTrabajo, cantidadOperaciones, usuarioPropietario, usuario);
+            conn = DriverManager.getConnection("jdbc:mysql://centrosdb.cnuocjqyr6v2.us-east-1.rds.amazonaws.com:3306/centrosdb", "admin", "cencentros1");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM trabajos_centros WHERE t_nombre_trabajo=='"+nombreTrabajo+"'");
+            if (rs.next()) {
+                result = rs.getString(1);
+                String expResult = "TrabajoTest";
+                assertEquals(expResult, result);
+            }
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

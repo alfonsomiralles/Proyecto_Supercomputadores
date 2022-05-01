@@ -58,7 +58,7 @@ public class Menu_PrincipalTest {
         System.out.println("comprobarPrivilegios");
         String funcionalidad = "";
         String accion = "";
-        String usuario = "";
+        String usuario = "adminu";
         Menu_Principal instance = new Menu_Principal();
         int expResult = 0;
         int result = instance.comprobarPrivilegios(funcionalidad, accion, usuario);
